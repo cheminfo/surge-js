@@ -1,6 +1,6 @@
 {
   "name": "surge-js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Enumerate every constitutional isomer of a molecular formula. The surge C program compiled to WebAssembly and embedded, so it runs in a browser with nothing to install and nothing to fetch.",
   "type": "module",
   "exports": {
