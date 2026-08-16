@@ -1,4 +1,4 @@
-surge-js embeds, as a WebAssembly binary, software that is not ours. The
+surge-wasm embeds, as a WebAssembly binary, software that is not ours. The
 TypeScript in src/ is MIT (see LICENSE); everything below is Apache License
 2.0, a copy of which is in LICENSE-APACHE-2.0.txt and at
 https://www.apache.org/licenses/LICENSE-2.0
