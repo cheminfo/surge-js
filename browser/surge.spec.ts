@@ -13,7 +13,7 @@ test('enumerates, batches and stops, in a real browser', async ({ page }) => {
     // The bundle the server builds from lib/, loaded the way a page would.
     // The address is held in a variable so it is resolved by the browser
     // rather than by tsc, which knows nothing of what the server serves.
-    const address = '/surge-js.js';
+    const address = '/surge-wasm.js';
     const { generate, count, SURGE_VERSION } = (await import(
       address
     )) as unknown as typeof SurgeJs;

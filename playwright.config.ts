@@ -7,7 +7,7 @@ export default defineConfig({
   use: { baseURL: 'http://localhost:31230' },
   webServer: {
     command: 'node browser/serve.js',
-    url: 'http://localhost:31230/surge-js.js',
+    url: 'http://localhost:31230/surge-wasm.js',
     reuseExistingServer: false,
   },
 });

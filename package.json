@@ -1,5 +1,5 @@
 {
-  "name": "surge-js",
+  "name": "surge-wasm",
   "version": "1.0.0",
   "description": "Enumerate every constitutional isomer of a molecular formula. The surge C program compiled to WebAssembly and embedded, so it runs in a browser with nothing to install and nothing to fetch.",
   "type": "module",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cheminfo/surge-js.git"
+    "url": "git+https://github.com/cheminfo/surge-wasm.git"
   },
   "keywords": [
     "surge",
@@ -45,9 +45,9 @@
   "author": "Luc Patiny",
   "license": "MIT AND Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cheminfo/surge-js/issues"
+    "url": "https://github.com/cheminfo/surge-wasm/issues"
   },
-  "homepage": "https://github.com/cheminfo/surge-js#readme",
+  "homepage": "https://github.com/cheminfo/surge-wasm#readme",
   "dependencies": {
     "uint8-base64": "^2.0.0"
   },

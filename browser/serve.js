@@ -14,10 +14,10 @@ const bundle = await build({
 const source = bundle.outputFiles[0].text;
 
 const page =
-  '<!doctype html><html><head><title>surge-js</title></head><body></body></html>';
+  '<!doctype html><html><head><title>surge-wasm</title></head><body></body></html>';
 
 createServer((request, response) => {
-  if (request.url === '/surge-js.js') {
+  if (request.url === '/surge-wasm.js') {
     response.writeHead(200, { 'content-type': 'text/javascript' });
     response.end(source);
   } else {

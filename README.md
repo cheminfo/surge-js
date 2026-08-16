@@ -1,4 +1,4 @@
-# surge-js
+# surge-wasm
 
 Enumerate every constitutional isomer of a molecular formula, in the browser or
 in Node, with nothing to install and nothing to fetch.
@@ -13,13 +13,13 @@ the generator instead of calling a service that runs it.
 ## Installation
 
 ```console
-npm i surge-js
+npm i surge-wasm
 ```
 
 ## Usage
 
 ```js
-import { generate, count } from 'surge-js';
+import { generate, count } from 'surge-wasm';
 
 const { smiles } = await generate('C4H10O');
 // ['CC(C)(O)C', 'CC(C)OC', 'CC(O)CC', 'CC(C)CO', 'CCCOC', 'CCCCO', 'CCOCC']
@@ -40,7 +40,7 @@ A formula surge refuses â€” an impossible parity, an element it does not know â€
 throws a `SurgeError` carrying what it said:
 
 ```js
-import { SurgeError } from 'surge-js';
+import { SurgeError } from 'surge-wasm';
 
 try {
   await generate('C4H11');
@@ -97,7 +97,7 @@ Two things still follow from surge having no way of being asked to stop:
 
 ```js
 // worker.js
-import { generate } from 'surge-js';
+import { generate } from 'surge-wasm';
 
 globalThis.addEventListener('message', async ({ data }) => {
   const { smiles } = await generate(data.formula, data.options);
