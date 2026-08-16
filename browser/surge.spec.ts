@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-import type * as SurgeJs from '../src/index.ts';
+import type * as SurgeWasm from '../src/index.ts';
 
 // The module is the one a browser would load: built by build/build-wasm.sh with
 // -sENVIRONMENT=web,worker, so nothing in it is node.
@@ -16,7 +16,7 @@ test('enumerates, batches and stops, in a real browser', async ({ page }) => {
     const address = '/surge-wasm.js';
     const { generate, count, SURGE_VERSION } = (await import(
       address
-    )) as unknown as typeof SurgeJs;
+    )) as unknown as typeof SurgeWasm;
 
     const whole = await generate('C4H10O');
 
