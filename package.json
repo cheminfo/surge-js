@@ -1,0 +1,67 @@
+{
+  "name": "surge-js",
+  "version": "0.0.0",
+  "description": "Enumerate every constitutional isomer of a molecular formula. The surge C program compiled to WebAssembly and embedded, so it runs in a browser with nothing to install and nothing to fetch.",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE-APACHE-2.0.txt",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build-wasm": "bash build/build-wasm.sh",
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf coverage lib",
+    "eslint": "eslint .",
+    "eslint-fix": "eslint . --fix",
+    "prepack": "npm run tsc",
+    "prettier": "prettier --check .",
+    "prettier-write": "prettier --write .",
+    "test": "npm run test-only && npm run check-types && npm run eslint && npm run prettier",
+    "test-browser": "playwright test",
+    "test-only": "vitest run --coverage",
+    "tsc": "npm run clean && npm run tsc-build",
+    "tsc-build": "tsc --project tsconfig.build.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheminfo/surge-js.git"
+  },
+  "keywords": [
+    "surge",
+    "isomers",
+    "constitutional isomers",
+    "structure generator",
+    "molecular formula",
+    "cheminformatics",
+    "nauty",
+    "wasm",
+    "webassembly"
+  ],
+  "author": "Luc Patiny",
+  "license": "MIT AND Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cheminfo/surge-js/issues"
+  },
+  "homepage": "https://github.com/cheminfo/surge-js#readme",
+  "dependencies": {
+    "uint8-base64": "^2.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@zakodium/tsconfig": "^1.0.5",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.39.5",
+    "eslint-config-cheminfo-typescript": "^22.1.0",
+    "prettier": "^3.9.6",
+    "rimraf": "^6.1.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}

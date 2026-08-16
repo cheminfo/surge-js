@@ -1,0 +1,6 @@
+CHANGELOG.md
+build/out
+coverage
+lib
+src/wasm/data.ts
+src/wasm/glue.ts

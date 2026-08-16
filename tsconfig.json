@@ -1,0 +1,11 @@
+{
+  "extends": "@zakodium/tsconfig",
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "outDir": "lib",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"]
+  },
+  "include": ["src", "build", "browser", "playwright.config.ts", "vitest*.ts"],
+  "exclude": ["build/out"]
+}

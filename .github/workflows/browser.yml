@@ -1,0 +1,29 @@
+name: Browser
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      # .npmrc sets ignore-scripts, so the browser is not fetched by npm ci.
+      - run: npx playwright install --with-deps chromium
+      # browser/serve.js bundles lib/, which prepack would otherwise build.
+      - run: npm run tsc
+      - run: npm run test-browser
+      - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7
